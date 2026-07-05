@@ -1,86 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using LTCSharp;
-using VVVV.PluginInterfaces.V2;
 
-namespace VVVV.Nodes.LTC
+namespace LTC.Nodes
 {
-	#region PluginInfo
-	[PluginInfo(Name = "Split", Category = "Timecode", Help = "Split Timecode into parts", Tags = "", Author = "elliotwoods", AutoEvaluate = true)]
-	#endregion PluginInfo
-	public class TimecodeSplit : IPluginEvaluate
+	public class TimecodeSplit
 	{
-		[Input("Input")]
-		IDiffSpread<Timecode> FInTimecode = null;
+		public List<string> OutTimeZone { get; private set; } = new List<string>();
+		public List<int> OutYear { get; private set; } = new List<int>();
+		public List<int> OutMonth { get; private set; } = new List<int>();
+		public List<int> OutDay { get; private set; } = new List<int>();
+		public List<int> OutHours { get; private set; } = new List<int>();
+		public List<int> OutMinutes { get; private set; } = new List<int>();
+		public List<int> OutSeconds { get; private set; } = new List<int>();
+		public List<int> OutFrame { get; private set; } = new List<int>();
 
-		[Output("Time Zone", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<string> FOutTimeZone = null;
-
-		[Output("Year", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutYear = null;
-
-		[Output("Month", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutMonth = null;
-
-		[Output("Day", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutDay = null;
-
-		[Output("Hours")]
-		ISpread<int> FOutHours = null;
-
-		[Output("Minutes")]
-		ISpread<int> FOutMinutes = null;
-
-		[Output("Seconds")]
-		ISpread<int> FOutSeconds = null;
-
-		[Output("Frame")]
-		ISpread<int> FOutFrame = null;
-
-		public void Evaluate(int SpreadMax)
+		public void Split(IList<Timecode> timecodes)
 		{
-			if (FInTimecode.IsChanged)
+			int count = timecodes.Count;
+
+			OutTimeZone = new List<string>(count);
+			OutYear    = new List<int>(count);
+			OutMonth   = new List<int>(count);
+			OutDay     = new List<int>(count);
+			OutHours   = new List<int>(count);
+			OutMinutes = new List<int>(count);
+			OutSeconds = new List<int>(count);
+			OutFrame   = new List<int>(count);
+
+			for (int i = 0; i < count; i++)
 			{
-				FOutTimeZone.SliceCount = SpreadMax;
-				FOutYear.SliceCount = SpreadMax;
-				FOutMonth.SliceCount = SpreadMax;
-				FOutDay.SliceCount = SpreadMax;
-				FOutHours.SliceCount = SpreadMax;
-				FOutMinutes.SliceCount = SpreadMax;
-				FOutSeconds.SliceCount = SpreadMax;
-				FOutFrame.SliceCount = SpreadMax;
+				var timecode = timecodes[i];
 
-				for (int i = 0; i < SpreadMax; i++)
+				if (timecode == null)
 				{
-					var timecode = FInTimecode[i];
-
-					if (timecode == null)
-					{
-						FOutTimeZone[i] = "";
-						FOutYear[i] = 0;
-						FOutMonth[i] = 0;
-						FOutDay[i] = 0;
-						FOutHours[i] = 0;
-						FOutMinutes[i] = 0;
-						FOutSeconds[i] = 0;
-						FOutFrame[i] = 0;
-					}
-					else
-					{
-						FOutTimeZone[i] = timecode.TimeZone;
-						FOutYear[i] = timecode.Years;
-						FOutMonth[i] = timecode.Months;
-						FOutDay[i] = timecode.Days;
-						FOutHours[i] = timecode.Hours;
-						FOutMinutes[i] = timecode.Minutes;
-						FOutSeconds[i] = timecode.Seconds;
-						FOutFrame[i] = timecode.Frame;
-					}
+					OutTimeZone.Add(""); OutYear.Add(0);  OutMonth.Add(0);   OutDay.Add(0);
+					OutHours.Add(0);    OutMinutes.Add(0); OutSeconds.Add(0); OutFrame.Add(0);
+				}
+				else
+				{
+					OutTimeZone.Add(timecode.TimeZone); OutYear.Add(timecode.Years);
+					OutMonth.Add(timecode.Months);      OutDay.Add(timecode.Days);
+					OutHours.Add(timecode.Hours);       OutMinutes.Add(timecode.Minutes);
+					OutSeconds.Add(timecode.Seconds);   OutFrame.Add(timecode.Frame);
 				}
 			}
 		}
 	}
 }
+

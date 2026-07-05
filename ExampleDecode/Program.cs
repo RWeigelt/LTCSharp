@@ -72,6 +72,7 @@ namespace ExampleDecode
 					}
 				}
 			}
+			// timer.Stop();
 		}
 
 		[SupportedOSPlatform("windows")]

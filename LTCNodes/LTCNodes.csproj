@@ -2,10 +2,11 @@
   <PropertyGroup>
     <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <RootNamespace>VVVV.Nodes.LTC</RootNamespace>
-    <AssemblyName>VVVV.Nodes.Timecode.LTC</AssemblyName>
+    <RootNamespace>LTC.Nodes</RootNamespace>
+    <AssemblyName>LTC.Nodes</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,15 +17,7 @@
     <PackageReference Include="NAudio.Wasapi" Version="2.3.0" />
     <PackageReference Include="NAudio.WinForms" Version="2.3.0" />
     <PackageReference Include="NAudio.WinMM" Version="2.3.0" />
-    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
-    <PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
-    <PackageReference Include="VVVV.Core" Version="39.0.0" />
-    <PackageReference Include="VVVV.PluginInterfaces" Version="39.0.0" />
-    <PackageReference Include="VVVV.SlimDX" Version="1.0.2" />
-    <PackageReference Include="VVVV.System.ComponentModel.Composition.Codeplex" Version="2.5.0">
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="VVVV.Utils" Version="39.0.0" />
+    <PackageReference Include="System.Resources.Extensions" Version="10.0.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LTCSharp\LTCSharp.vcxproj" />

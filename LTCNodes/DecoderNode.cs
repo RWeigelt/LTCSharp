@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
-using VVVV.PluginInterfaces.V2;
 
-namespace VVVV.Nodes.LTC
+namespace LTC.Nodes
 {
-	#region PluginInfo
-	[PluginInfo(Name = "Decoder", Category = "Timecode", Version = "LTC", Help = "Decode audio as LTC timecode", Tags = "", Author = "elliotwoods", AutoEvaluate = true)]
-	#endregion PluginInfo
-	public class DecoderNode : IPluginEvaluate
+	public class DecoderNode : IDisposable
 	{
 		class DecodeInstance : IDisposable
 		{
@@ -69,65 +62,53 @@ namespace VVVV.Nodes.LTC
 			}
 		}
 
-		[Input("Device")]
-		IDiffSpread<MMDevice> FInDevice = null;
+		public List<LTCSharp.Timecode> OutTimecode { get; private set; } = new List<LTCSharp.Timecode>();
+		public List<string> OutStatus { get; private set; } = new List<string>();
 
-		[Input("Framerate", DefaultValue=25)]
-		IDiffSpread<int> FInFramerate = null;
+		private List<DecodeInstance> _instances = new List<DecodeInstance>();
 
-		[Input("Channel Count", DefaultValue=2)]
-		IDiffSpread<uint> FInChannels = null;
-
-		[Input("Channel Index")]
-		IDiffSpread<uint> FInChannel = null;
-
-		[Output("Timecode")]
-		ISpread<LTCSharp.Timecode> FOutTimecode = null;
-
-		[Output("Status")]
-		ISpread<string> FOutStatus = null;
-
-		Spread<DecodeInstance> FInstances = new Spread<DecodeInstance>(0);
-
-		public void Evaluate(int SpreadMax)
+		public void Update(IList<MMDevice> devices, IList<int> framerates, IList<uint> channels, IList<uint> channelIndices)
 		{
-			if (FInDevice.IsChanged || FInFramerate.IsChanged || FInChannel.IsChanged || FInChannels.IsChanged)
+			foreach (var instance in _instances)
 			{
-				foreach (var instance in FInstances)
+				instance?.Dispose();
+			}
+			_instances.Clear();
+
+			int count = devices.Count;
+			var newTimecodes = new List<LTCSharp.Timecode>(count);
+			var newStatuses = new List<string>(count);
+
+			for (int i = 0; i < count; i++)
+			{
+				try
 				{
-					if (instance != null)
-					{
-						instance.Dispose();
-					}
+					var instance = new DecodeInstance(devices[i], channels[i], channelIndices[i], framerates[i]);
+					_instances.Add(instance);
+					newStatuses.Add("OK");
+					newTimecodes.Add(null);
 				}
-
-				FInstances.SliceCount = 0;
-				FOutStatus.SliceCount = SpreadMax;
-				FOutTimecode.SliceCount = SpreadMax;
-
-				for (int i = 0; i < SpreadMax; i++)
+				catch (Exception e)
 				{
-					try
-					{
-						var instance = new DecodeInstance(FInDevice[i], FInChannels[i], FInChannel[i], FInFramerate[i]);
-						FInstances.Add(instance);
-						FOutStatus[i] = "OK";
-					}
-					catch (Exception e)
-					{
-						FInstances.Add(null);
-						FOutStatus[i] = e.Message;
-					}
+					_instances.Add(null);
+					newStatuses.Add(e.Message);
+					newTimecodes.Add(null);
 				}
 			}
 
-			for (int i = 0; i < FInstances.SliceCount; i++)
+			OutTimecode = newTimecodes;
+			OutStatus = newStatuses;
+		}
+
+		public void ReadTimecodes()
+		{
+			for (int i = 0; i < _instances.Count; i++)
 			{
-				if (FInstances[i] != null)
+				if (_instances[i] != null)
 				{
 					try
 					{
-						FOutTimecode[i] = FInstances[i].Timecode;
+						OutTimecode[i] = _instances[i].Timecode;
 					}
 					catch
 					{
@@ -135,9 +116,18 @@ namespace VVVV.Nodes.LTC
 				}
 				else
 				{
-					FOutTimecode[i] = null;
+					OutTimecode[i] = null;
 				}
+			}
+		}
+
+		public void Dispose()
+		{
+			foreach (var instance in _instances)
+			{
+				instance?.Dispose();
 			}
 		}
 	}
 }
+

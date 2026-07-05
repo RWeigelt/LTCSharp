@@ -1,24 +1,20 @@
 <Solution>
   <Configurations>
-    <Platform Name="Any CPU" />
-    <Platform Name="Mixed Platforms" />
-    <Platform Name="Win32" />
+    <Platform Name="x64" />
   </Configurations>
   <Project Path="ExampleDecode/ExampleDecode.csproj" Id="42e61c05-175d-4d4f-ac52-4b22795cba6c">
-    <Build Solution="*|Win32" Project="false" />
+    <BuildDependency Project="libltc/libltc.vcxproj" />
+    <BuildDependency Project="LTCNodes/LTCNodes.csproj" />
+    <Platform Project="x64" />
   </Project>
   <Project Path="ExampleEncode/ExampleEncode.csproj" Id="74748156-9468-4a2a-847a-cd535bfb281e">
-    <Build Solution="*|Win32" Project="false" />
+    <BuildDependency Project="libltc/libltc.vcxproj" />
+    <BuildDependency Project="LTCNodes/LTCNodes.csproj" />
+    <Platform Project="x64" />
   </Project>
-  <Project Path="libltc/libltc.vcxproj" Id="1888f07f-1021-46b9-9025-3aaa4ebf0a24">
-    <Platform Project="Win32" />
-    <Build Solution="*|Any CPU" Project="false" />
-  </Project>
+  <Project Path="libltc/libltc.vcxproj" Id="1888f07f-1021-46b9-9025-3aaa4ebf0a24" />
   <Project Path="LTCNodes/LTCNodes.csproj" Id="f9b67578-a9f1-4bfe-94df-b0353efd984f">
-    <Build Solution="*|Win32" Project="false" />
+    <Platform Project="x64" />
   </Project>
-  <Project Path="LTCSharp/LTCSharp.vcxproj" Id="6625fc6e-ac51-4276-9d95-57ab78e21b03">
-    <Platform Project="Win32" />
-    <Build Solution="*|Any CPU" Project="false" />
-  </Project>
+  <Project Path="LTCSharp/LTCSharp.vcxproj" Id="6625fc6e-ac51-4276-9d95-57ab78e21b03" />
 </Solution>

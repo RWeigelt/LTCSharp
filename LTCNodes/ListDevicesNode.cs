@@ -1,61 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NAudio.CoreAudioApi;
-using VVVV.PluginInterfaces.V2;
 
-namespace VVVV.Nodes.NAudio
+namespace LTC.Nodes
 {
-	#region PluginInfo
-	[PluginInfo(Name = "ListDevices", Category = "NAudio", Help = "Enumerate WASAPI devices", Tags = "", Author = "elliotwoods", AutoEvaluate = true)]
-	#endregion PluginInfo
-	public class ListDevicesNode : IPluginEvaluate
+	public class ListDevicesNode
 	{
-		[Input("Refresh", IsBang = true, IsSingle = true)]
-		ISpread<bool> FInRefresh = null;
+		public List<MMDevice> Devices { get; private set; } = new List<MMDevice>();
+		public List<string> Names { get; private set; } = new List<string>();
+		public List<string> States { get; private set; } = new List<string>();
 
-		[Input("Type", IsSingle=true)]
-		IDiffSpread<DataFlow> FInDeviceType = null;
-
-		[Input("State", IsSingle = true)]
-		IDiffSpread<DeviceState> FInDeviceState = null;
-
-		[Output("Device")]
-		ISpread<MMDevice> FOutDevices = null;
-
-		[Output("Name")]
-		ISpread<string> FOutName = null;
-
-		[Output("State")]
-		ISpread<string> FOutState = null;
-
-		bool firstRun = true;
-
-		public void Evaluate(int SpreadMax)
+		public void Refresh(DataFlow deviceType = DataFlow.All, DeviceState deviceState = DeviceState.Active)
 		{
-			if (firstRun || FInRefresh[0] || FInDeviceType.IsChanged)
-			{
-				firstRun = false;
+			var enumerator = new MMDeviceEnumerator();
+			var devices = enumerator.EnumerateAudioEndPoints(deviceType, deviceState).ToArray();
 
-				var enumerator = new MMDeviceEnumerator();
-				var devices = enumerator.EnumerateAudioEndPoints(FInDeviceType[0], FInDeviceState[0]).ToArray();
-
-				FOutDevices.SliceCount = devices.Count();
-				FOutName.SliceCount = devices.Count();
-				FOutState.SliceCount = devices.Count();
-
-				int index = 0;
-
-				foreach (var device in devices)
-				{
-					FOutDevices[index] = device;
-					FOutName[index] = device.FriendlyName;
-					FOutState[index] = device.State.ToString();
-					index++;
-				}
-			}
+			Devices = devices.ToList();
+			Names = devices.Select(d => d.FriendlyName).ToList();
+			States = devices.Select(d => d.State.ToString()).ToList();
 		}
 	}
 }
+
