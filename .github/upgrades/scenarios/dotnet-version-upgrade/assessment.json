@@ -1,0 +1,716 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-07-05T14:09:02.3180228Z",
+  "analysisEndTime": "2026-07-05T14:09:08.6859448Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 3,
+      "issues": 7,
+      "incidents": 22,
+      "effort": 22
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 19,
+        "Optional": 0,
+        "Potential": 3,
+        "Information": 0
+      },
+      "category": {
+        "Project": 3,
+        "NuGet": 12,
+        "Api": 7
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "ExampleDecode.csproj",
+      "startingProject": true,
+      "issues": 6,
+      "storyPoints": 21,
+      "properties": {
+        "appName": "ExampleDecode",
+        "projectKind": "ClassicWinForms",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "numberOfFiles": 2,
+        "numberOfCodeFiles": 2,
+        "linesTotal": 150,
+        "linesOfCode": 150,
+        "totalApiScanned": 87,
+        "minLinesOfCodeToChange": 7,
+        "maxLinesOfCodeToChange": 7
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "c38ded1d-f0a5-4a3f-a5fa-d50d6819e8b2",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Win32.Registry, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Win32.Registry, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "Microsoft.Win32.Registry, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Win32.Registry, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Win32.Registry 4.7.0",
+            "properties": {
+              "PackageId": "Microsoft.Win32.Registry",
+              "PackageVersion": "4.7.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "5b5cdaac-43a3-4aa4-9f18-47bef4672010",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Buffers, 4.5.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Buffers, 4.5.1\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Buffers, 4.5.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Buffers, 4.5.1\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Buffers 4.5.1",
+            "properties": {
+              "PackageId": "System.Buffers",
+              "PackageVersion": "4.5.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "fb91c0f9-f08a-428f-a63a-40421c2fc157",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Memory, 4.5.5\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Memory, 4.5.5\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Memory, 4.5.5\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Memory, 4.5.5\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Memory 4.5.5",
+            "properties": {
+              "PackageId": "System.Memory",
+              "PackageVersion": "4.5.5",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "17149fbf-37d3-4222-afe1-2e67a1aad021",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Numerics.Vectors, 4.5.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Numerics.Vectors, 4.5.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Numerics.Vectors, 4.5.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Numerics.Vectors, 4.5.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Numerics.Vectors 4.5.0",
+            "properties": {
+              "PackageId": "System.Numerics.Vectors",
+              "PackageVersion": "4.5.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "1c9edc16-e6eb-4bed-bf13-16e9a2427bb2",
+          "ruleId": "NuGet.0002",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Resources.Extensions, 8.0.0\n\nRecommendation:\n\nRemove System.Resources.Extensions, and replace with new package System.Resources.Extensions 10.0.9",
+              "protected": "System.Resources.Extensions, 8.0.0\n\nRecommendation:\n\nRemove System.Resources.Extensions, and replace with new package System.Resources.Extensions 10.0.9"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Resources.Extensions, 8.0.0\n\nRecommendation:\n\nRemove System.Resources.Extensions, and replace with new package System.Resources.Extensions 10.0.9",
+            "protectedSnippet": "System.Resources.Extensions, 8.0.0\n\nRecommendation:\n\nRemove System.Resources.Extensions, and replace with new package System.Resources.Extensions 10.0.9",
+            "label": "System.Resources.Extensions 8.0.0",
+            "properties": {
+              "PackageId": "System.Resources.Extensions",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.9",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "5b02ac41-4e5a-468f-a0a4-51bfbdba93ae",
+          "ruleId": "NuGet.0002",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Runtime.CompilerServices.Unsafe, 4.5.3\n\nRecommendation:\n\nRemove System.Runtime.CompilerServices.Unsafe, and replace with new package System.Runtime.CompilerServices.Unsafe 6.1.2",
+              "protected": "System.Runtime.CompilerServices.Unsafe, 4.5.3\n\nRecommendation:\n\nRemove System.Runtime.CompilerServices.Unsafe, and replace with new package System.Runtime.CompilerServices.Unsafe 6.1.2"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Runtime.CompilerServices.Unsafe, 4.5.3\n\nRecommendation:\n\nRemove System.Runtime.CompilerServices.Unsafe, and replace with new package System.Runtime.CompilerServices.Unsafe 6.1.2",
+            "protectedSnippet": "System.Runtime.CompilerServices.Unsafe, 4.5.3\n\nRecommendation:\n\nRemove System.Runtime.CompilerServices.Unsafe, and replace with new package System.Runtime.CompilerServices.Unsafe 6.1.2",
+            "label": "System.Runtime.CompilerServices.Unsafe 4.5.3",
+            "properties": {
+              "PackageId": "System.Runtime.CompilerServices.Unsafe",
+              "PackageVersion": "4.5.3",
+              "PackageNewVersion": "6.1.2",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "f35fce92-bd1d-4848-9624-52da04d67b79",
+          "ruleId": "NuGet.0002",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Security.AccessControl, 4.7.0\n\nRecommendation:\n\nRemove System.Security.AccessControl, and replace with new package System.Security.AccessControl 6.0.1",
+              "protected": "System.Security.AccessControl, 4.7.0\n\nRecommendation:\n\nRemove System.Security.AccessControl, and replace with new package System.Security.AccessControl 6.0.1"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Security.AccessControl, 4.7.0\n\nRecommendation:\n\nRemove System.Security.AccessControl, and replace with new package System.Security.AccessControl 6.0.1",
+            "protectedSnippet": "System.Security.AccessControl, 4.7.0\n\nRecommendation:\n\nRemove System.Security.AccessControl, and replace with new package System.Security.AccessControl 6.0.1",
+            "label": "System.Security.AccessControl 4.7.0",
+            "properties": {
+              "PackageId": "System.Security.AccessControl",
+              "PackageVersion": "4.7.0",
+              "PackageNewVersion": "6.0.1",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "03cbc0f9-e593-43eb-9eff-3ee63757fd74",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Security.Principal.Windows, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Security.Principal.Windows, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "System.Security.Principal.Windows, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Security.Principal.Windows, 4.7.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Security.Principal.Windows 4.7.0",
+            "properties": {
+              "PackageId": "System.Security.Principal.Windows",
+              "PackageVersion": "4.7.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "eb3b276b-b610-4ac1-aff3-208a64b9af66",
+          "ruleId": "NuGet.0001",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "VVVV.Core, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+              "protected": "VVVV.Core, 39.0.0\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "VVVV.Core, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "VVVV.Core, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+            "label": "VVVV.Core 39.0.0",
+            "properties": {
+              "PackageId": "VVVV.Core",
+              "PackageVersion": "39.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "e26225c6-d95a-4881-9dac-5a58128fe50b",
+          "ruleId": "NuGet.0001",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "VVVV.PluginInterfaces, 39.0.0\n\nRecommendation:\n\nVVVV.PluginInterfaces, 38.1.0",
+              "protected": "VVVV.PluginInterfaces, 39.0.0\n\nRecommendation:\n\nVVVV.PluginInterfaces, 38.1.0"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "VVVV.PluginInterfaces, 39.0.0\n\nRecommendation:\n\nVVVV.PluginInterfaces, 38.1.0",
+            "protectedSnippet": "VVVV.PluginInterfaces, 39.0.0\n\nRecommendation:\n\nVVVV.PluginInterfaces, 38.1.0",
+            "label": "VVVV.PluginInterfaces 39.0.0",
+            "properties": {
+              "PackageId": "VVVV.PluginInterfaces",
+              "PackageVersion": "39.0.0",
+              "PackageNewVersion": "38.1.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "2e95dece-6597-40fc-a3f8-99123c7115c7",
+          "ruleId": "NuGet.0001",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "VVVV.System.ComponentModel.Composition.Codeplex, 2.5.0\n\nRecommendation:\n\nNo supported version found",
+              "protected": "VVVV.System.ComponentModel.Composition.Codeplex, 2.5.0\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "VVVV.System.ComponentModel.Composition.Codeplex, 2.5.0\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "VVVV.System.ComponentModel.Composition.Codeplex, 2.5.0\n\nRecommendation:\n\nNo supported version found",
+            "label": "VVVV.System.ComponentModel.Composition.Codeplex 2.5.0",
+            "properties": {
+              "PackageId": "VVVV.System.ComponentModel.Composition.Codeplex",
+              "PackageVersion": "2.5.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "32ae4033-95fd-45b4-b874-8ec05660d0a3",
+          "ruleId": "NuGet.0001",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "VVVV.Utils, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+              "protected": "VVVV.Utils, 39.0.0\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "VVVV.Utils, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "VVVV.Utils, 39.0.0\n\nRecommendation:\n\nNo supported version found",
+            "label": "VVVV.Utils 39.0.0",
+            "properties": {
+              "PackageId": "VVVV.Utils",
+              "PackageVersion": "39.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d81c7253-a507-474d-b563-a06ac9775036",
+          "ruleId": "Project.0001",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "ExampleDecode.csproj"
+          }
+        },
+        {
+          "incidentId": "38a9043f-434a-44c0-a0a9-1d378ed10530",
+          "ruleId": "Project.0002",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0-windows",
+              "protected": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0-windows"
+            },
+            "kind": "File",
+            "path": "ExampleDecode.csproj",
+            "snippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0-windows",
+            "protectedSnippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0-windows",
+            "properties": {
+              "CurrentTargetFramework": ".NETFramework,Version=v4.8",
+              "RecommendedTargetFramework": "net10.0-windows"
+            }
+          }
+        },
+        {
+          "incidentId": "e0b13be7-cb68-49fd-9723-fe8a7cbbf415",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var wavePlayer = new WaveFileReader(selectFileDialog.FileName);",
+              "protected": "P:System.Windows.Forms.FileDialog.FileName"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "var wavePlayer = new WaveFileReader(selectFileDialog.FileName);",
+            "protectedSnippet": "P:System.Windows.Forms.FileDialog.FileName",
+            "label": "P:System.Windows.Forms.FileDialog.FileName",
+            "line": 82,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "f8b57100-f654-4dfa-a65d-660ebe71f3d7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "selectFileDialog.ShowDialog();",
+              "protected": "T:System.Windows.Forms.DialogResult"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "selectFileDialog.ShowDialog();",
+            "protectedSnippet": "T:System.Windows.Forms.DialogResult",
+            "label": "T:System.Windows.Forms.DialogResult",
+            "line": 81,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "38de6ccc-928f-421c-b781-9e0d2b473c37",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "selectFileDialog.ShowDialog();",
+              "protected": "M:System.Windows.Forms.CommonDialog.ShowDialog"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "selectFileDialog.ShowDialog();",
+            "protectedSnippet": "M:System.Windows.Forms.CommonDialog.ShowDialog",
+            "label": "M:System.Windows.Forms.CommonDialog.ShowDialog",
+            "line": 81,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "d30b748e-6bfe-466b-85e1-21a59d4dda6a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "selectFileDialog.RestoreDirectory = true;",
+              "protected": "P:System.Windows.Forms.FileDialog.RestoreDirectory"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "selectFileDialog.RestoreDirectory = true;",
+            "protectedSnippet": "P:System.Windows.Forms.FileDialog.RestoreDirectory",
+            "label": "P:System.Windows.Forms.FileDialog.RestoreDirectory",
+            "line": 80,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "09693c6a-13f0-4ffd-910b-1cfc65cbbb12",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "selectFileDialog.Filter = \u0022wav files (*.wav)|*.wav\u0022;",
+              "protected": "P:System.Windows.Forms.FileDialog.Filter"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "selectFileDialog.Filter = \u0022wav files (*.wav)|*.wav\u0022;",
+            "protectedSnippet": "P:System.Windows.Forms.FileDialog.Filter",
+            "label": "P:System.Windows.Forms.FileDialog.Filter",
+            "line": 79,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "39160e3a-bcfd-45fe-9ee0-32b97a3f9b2b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "OpenFileDialog selectFileDialog = new OpenFileDialog();",
+              "protected": "T:System.Windows.Forms.OpenFileDialog"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "OpenFileDialog selectFileDialog = new OpenFileDialog();",
+            "protectedSnippet": "T:System.Windows.Forms.OpenFileDialog",
+            "label": "T:System.Windows.Forms.OpenFileDialog",
+            "line": 78,
+            "column": 3
+          }
+        },
+        {
+          "incidentId": "5be708c5-4453-4705-8dc9-acb128f71d13",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ExampleDecode.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "OpenFileDialog selectFileDialog = new OpenFileDialog();",
+              "protected": "M:System.Windows.Forms.OpenFileDialog.#ctor"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "OpenFileDialog selectFileDialog = new OpenFileDialog();",
+            "protectedSnippet": "M:System.Windows.Forms.OpenFileDialog.#ctor",
+            "label": "M:System.Windows.Forms.OpenFileDialog.#ctor",
+            "line": 78,
+            "column": 3
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "WinForms",
+          "incidents": [
+            "5be708c5-4453-4705-8dc9-acb128f71d13",
+            "39160e3a-bcfd-45fe-9ee0-32b97a3f9b2b",
+            "09693c6a-13f0-4ffd-910b-1cfc65cbbb12",
+            "d30b748e-6bfe-466b-85e1-21a59d4dda6a",
+            "38de6ccc-928f-421c-b781-9e0d2b473c37",
+            "f8b57100-f654-4dfa-a65d-660ebe71f3d7",
+            "e0b13be7-cb68-49fd-9723-fe8a7cbbf415"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "R:\\LTCSHarp\\libltc\\libltc.vcxproj",
+      "startingProject": true,
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "libltc",
+        "projectKind": "ClassicDotNetApp",
+        "frameworks": [],
+        "languages": [
+          ""
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "numberOfFiles": 0,
+        "numberOfCodeFiles": 0,
+        "linesTotal": 0,
+        "linesOfCode": 0,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [],
+      "features": []
+    },
+    {
+      "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "properties": {
+        "appName": "LTCSharp",
+        "projectKind": "ClassicClassLibrary",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          ""
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "numberOfFiles": 0,
+        "numberOfCodeFiles": 0,
+        "linesTotal": 0,
+        "linesOfCode": 0,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "56b4d982-1043-4be4-9707-64cb2d11375c",
+          "ruleId": "Project.0002",
+          "projectPath": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+              "protected": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj",
+            "snippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": ".NETFramework,Version=v4.8",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0001": {
+      "id": "NuGet.0001",
+      "isFeature": false,
+      "description": "NuGet package is incompatible with selected target framework.\n\nPackage needs to be upgraded to a version supporting selected project target framework. If there no new package versions supporting new target framework, different package needs to be used and all code needs to be upgraded to new API.",
+      "label": "NuGet package is incompatible",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262529",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0001": {
+      "id": "Project.0001",
+      "isFeature": false,
+      "description": "Project file needs to be converted to SDK-style. Modern .NET framework projects require a change in the project file format and use SDK corresponding to project flavor and functionality.",
+      "label": "Project file needs to be converted to SDK-style",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "WinForms": {
+      "id": "WinForms",
+      "isFeature": false,
+      "description": "Windows Forms APIs for building Windows desktop applications with traditional Forms-based UI that are available in .NET on Windows. Enable Windows Desktop support: Option 1 (Recommended): Target net9.0-windows; Option 2: Add \u003CUseWindowsDesktop\u003Etrue\u003C/UseWindowsDesktop\u003E; Option 3 (Legacy): Use Microsoft.NET.Sdk.WindowsDesktop SDK.",
+      "label": "Windows Forms",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Windows Forms on .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341906",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}

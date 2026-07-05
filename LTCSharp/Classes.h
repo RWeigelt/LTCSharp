@@ -2,6 +2,13 @@
 
 #pragma once
 #include "ltc.h"
+
+// Provide struct bodies for opaque native handles so the C++/CLI linker can
+// resolve their typeref tokens (suppresses LNK4248). These structs are only
+// ever used as pointers in managed ref classes; no member access occurs.
+// The real struct layouts live in libltc and are not affected.
+struct LTCDecoder {};
+struct LTCEncoder {};
  
 using namespace System;
 using namespace System::Runtime::InteropServices;
@@ -46,8 +53,8 @@ namespace LTCSharp {
 		property int Frame { int get() { return this->getInstance()->frame; } }
 
 		virtual String^ ToString() override;
-		virtual String^ ToString(String^ format) override;
-		virtual String^ ToString(String^ format, IFormatProvider^ provider) override;
+		virtual String^ ToString(String^ format);
+		virtual String^ ToString(String^ format, IFormatProvider^ provider) = IFormattable::ToString;
 
 	protected:
 		SMPTETimecode * instance;
@@ -62,6 +69,8 @@ namespace LTCSharp {
 		Timecode^ getTimecode();
 
 		LTCFrameExt * getInstance() { return this->instance; }
+	internal:
+		LTC_TV_STANDARD tvStandard;
 	protected:
 		LTCFrameExt * instance;
 	};
@@ -93,6 +102,7 @@ namespace LTCSharp {
 
 	protected:
 		LTCDecoder * instance;
+		LTC_TV_STANDARD tvStandard;
 	};
 
 	public ref class Encoder

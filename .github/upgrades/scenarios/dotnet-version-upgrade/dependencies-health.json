@@ -1,0 +1,952 @@
+{
+  "packageGovernance": {
+    "totalDistinctPackages": 20,
+    "totalVersionDriftInstances": 0,
+    "targetFramework": "net10.0",
+    "packages": [
+      {
+        "name": "Microsoft.Win32.Registry",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.7.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.7.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.Asio",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.Core",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.Midi",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.Wasapi",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.WinForms",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "NAudio.WinMM",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.3.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.3.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Buffers",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.5.1",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.5.1",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Memory",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.5.5",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.5.5",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Numerics.Vectors",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.5.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.5.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Resources.Extensions",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "8.0.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "8.0.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Runtime.CompilerServices.Unsafe",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.5.3",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.5.3",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Security.AccessControl",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.7.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.7.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "System.Security.Principal.Windows",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "4.7.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "4.7.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "VVVV.Core",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "39.0.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "39.0.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "VVVV.PluginInterfaces",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "39.0.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "39.0.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "VVVV.SlimDX",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "1.0.2",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "1.0.2",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "VVVV.System.ComponentModel.Composition.Codeplex",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "2.5.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "2.5.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "VVVV.Utils",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "39.0.0",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "39.0.0",
+            "projects": [
+              "ExampleDecode"
+            ],
+            "isRecommended": true
+          }
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "ExampleDecode",
+      "path": "ExampleDecode.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net48"
+      ],
+      "targetFramework": "net10.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "Microsoft.Win32.Registry",
+            "version": "4.7.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.Asio",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.Core",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.Midi",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.Wasapi",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.WinForms",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "NAudio.WinMM",
+            "version": "2.3.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Buffers",
+            "version": "4.5.1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Memory",
+            "version": "4.5.5",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Numerics.Vectors",
+            "version": "4.5.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Resources.Extensions",
+            "version": "8.0.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Runtime.CompilerServices.Unsafe",
+            "version": "4.5.3",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Security.AccessControl",
+            "version": "4.7.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "System.Security.Principal.Windows",
+            "version": "4.7.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "VVVV.Core",
+            "version": "39.0.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "VVVV.PluginInterfaces",
+            "version": "39.0.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "VVVV.SlimDX",
+            "version": "1.0.2",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "VVVV.System.ComponentModel.Composition.Codeplex",
+            "version": "2.5.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "VVVV.Utils",
+            "version": "39.0.0",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Core.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Numerics",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Numerics.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Windows.Forms.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Xml.Linq.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Data.DataSetExtensions.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\Microsoft.CSharp.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Data.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Xml.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "mscorlib",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\mscorlib.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.Win32.Registry",
+            "version": "4.1.3.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\ref\\net472\\Microsoft.Win32.Registry.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.Asio",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.asio\\2.3.0\\lib\\netstandard2.0\\NAudio.Asio.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.Core",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.core\\2.3.0\\lib\\netstandard2.0\\NAudio.Core.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio\\2.3.0\\lib\\net472\\NAudio.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.Midi",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.midi\\2.3.0\\lib\\netstandard2.0\\NAudio.Midi.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.Wasapi",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.wasapi\\2.3.0\\lib\\netstandard2.0\\NAudio.Wasapi.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.WinForms",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.winforms\\2.3.0\\lib\\net472\\NAudio.WinForms.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "NAudio.WinMM",
+            "version": "2.3.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\naudio.winmm\\2.3.0\\lib\\netstandard2.0\\NAudio.WinMM.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Buffers",
+            "version": "4.0.3.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.buffers\\4.5.1\\ref\\net45\\System.Buffers.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.ComponentModel.Composition.CodePlex",
+            "version": "4.1.2.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\vvvv.system.componentmodel.composition.codeplex\\2.5.0\\lib\\net40\\System.ComponentModel.Composition.CodePlex.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Memory",
+            "version": "4.0.1.2",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.memory\\4.5.5\\lib\\net461\\System.Memory.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Numerics.Vectors",
+            "version": "4.1.4.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\ref\\net46\\System.Numerics.Vectors.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Resources.Extensions",
+            "version": "8.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.resources.extensions\\8.0.0\\lib\\net462\\System.Resources.Extensions.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Runtime.CompilerServices.Unsafe",
+            "version": "4.0.4.1",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\ref\\net461\\System.Runtime.CompilerServices.Unsafe.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Security.AccessControl",
+            "version": "4.1.3.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\ref\\net461\\System.Security.AccessControl.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Security.Principal.Windows",
+            "version": "4.1.3.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\ref\\net461\\System.Security.Principal.Windows.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "VVVV.Core",
+            "version": "39.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\vvvv.core\\39.0.0\\lib\\net461\\VVVV.Core.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "VVVV.PluginInterfaces",
+            "version": "39.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\vvvv.plugininterfaces\\39.0.0\\lib\\net46\\VVVV.PluginInterfaces.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "VVVV.Utils",
+            "version": "39.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\Roland\\.nuget\\packages\\vvvv.utils\\39.0.0\\lib\\net461\\VVVV.Utils.dll",
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "LTCSharp",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "ExampleDecode.csproj"
+              }
+            ],
+            "referencedProjectPath": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "libltc",
+      "path": "R:\\LTCSHarp\\libltc\\libltc.vcxproj",
+      "isSdk": false,
+      "currentFrameworks": [],
+      "targetFramework": "net10.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [],
+        "projectReferences": [],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "LTCSharp",
+      "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net48"
+      ],
+      "targetFramework": "net10.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Xml.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "4.0.0.0",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj"
+              }
+            ],
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Data.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "mscorlib",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\mscorlib.dll",
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "libltc",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "R:\\LTCSHarp\\LTCSharp\\LTCSharp.vcxproj"
+              }
+            ],
+            "referencedProjectPath": "R:\\LTCSHarp\\libltc\\libltc.vcxproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    }
+  ]
+}
