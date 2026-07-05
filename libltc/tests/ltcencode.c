@@ -3,7 +3,7 @@
    @file ltcencoder.c
    @author Robin Gareus <robin@gareus.org>
 
-   Copyright (C) 2006-2012 Robin Gareus <robin@gareus.org>
+   Copyright (C) 2006-2016 Robin Gareus <robin@gareus.org>
    Copyright (C) 2008-2009 Jan <jan@geheimwerk.de>
 
    This program is free software; you can redistribute it and/or modify
@@ -27,6 +27,10 @@
 #include <string.h>
 
 #include <ltc.h>
+
+#ifdef _WIN32
+#include <fcntl.h> // for _fmode
+#endif
 
 int main(int argc, char **argv) {
 	FILE* file;
@@ -75,6 +79,12 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
+#ifdef _WIN32
+	// see https://msdn.microsoft.com/en-us/library/ktss1a9b.aspx and
+	// https://github.com/x42/libltc/issues/18
+	_set_fmode(_O_BINARY);
+#endif
+
 	file = fopen(filename, "wb");
 	if (!file) {
 		fprintf(stderr, "Error: can not open file '%s' for writing.\n", filename);
@@ -82,7 +92,7 @@ int main(int argc, char **argv) {
 	}
 
 	encoder = ltc_encoder_create(1, 1, 0, LTC_USE_DATE);
-	ltc_encoder_set_bufsize(encoder, sampleRate, fps);
+	ltc_encoder_set_buffersize(encoder, sampleRate, fps);
 	ltc_encoder_reinit(encoder, sampleRate, fps,
 			fps==25?LTC_TV_625_50:LTC_TV_525_60, LTC_USE_DATE);
 
@@ -106,7 +116,7 @@ int main(int argc, char **argv) {
 
 		ltc_encoder_encode_frame(encoder);
 
-		buf = ltc_encoder_get_bufptr(encoder, &len, 1);
+		len = ltc_encoder_get_bufferptr(encoder, &buf, 1);
 
 		if (len > 0) {
 			fwrite(buf, sizeof(ltcsnd_sample_t), len, file);

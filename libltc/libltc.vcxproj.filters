@@ -18,16 +18,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\decoder.cpp">
+    <ClCompile Include="src\decoder.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\encoder.cpp">
+    <ClCompile Include="src\encoder.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ltc.cpp">
+    <ClCompile Include="src\ltc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\timecode.cpp">
+    <ClCompile Include="src\timecode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

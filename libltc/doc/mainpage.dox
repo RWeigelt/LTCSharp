@@ -21,8 +21,8 @@
 
 @section download Download
 <ul>
- <li><a href="http://github.com/x42/libltc/downloads">GitHub Downloads</a></li>
- <li><a href="http://github.com/x42/libltc/">GitHub Project Page</a></li>
+ <li><a href="https://github.com/x42/libltc/releases">GitHub Downloads/Releases</a></li>
+ <li><a href="https://github.com/x42/libltc/">GitHub Project Page</a></li>
  <li>git://github.com/x42/libltc.git</li>
 </ul>
 
@@ -42,7 +42,11 @@
 
  The self-test code lends itself as good examples on how to get started.
  See \ref ltcdecode.c, \ref ltcencode.c and \ref example_encode.c.
- Another good starting point is <a href="https://github.com/x42/ltc-tools">ltc-tools</a>.
+ Other good starting point include
+ <ul>
+ <li><a href="https://github.com/x42/ltc-tools">ltc-tools</a> portable commandline-tools with file-i/o via <a href="https://github.com/erikd/libsndfile">libsndfile</a> and audio-i/o via <a hre="http://jackaudio.org/">libjack</a></li>
+ <li><a href="https://github.com/loupus/LtcWaveAudio">LtcWaveAudio</a>, a MSVC project to generate and play LTC by Hakan Soyalp.</li>
+ </ul>
 
 @section about Q&A
 
@@ -76,9 +80,27 @@
   Yes it does. See the documentation for \ref LTCFrameExt
  </dd>
 
+ <dt>Can I use libltc in a proprietary/closed-source project?</dt>
+ <dd>
+  Yes, with some care. In a nutshell:<br/>
+  Create a dynamic library (.dll, ,dylib, .so) of libltc and link your program against it.
+  Your project remains independent.
+  You only need to be able to convey means to re-create this library (source-code, build-scripts) to anyone who asks.
+  The easiest way to do this is to simply not modify libltc and refer to the upstream source (keep a copy just in case).<br/>
+  If you copy the library code directly into your project and statically link your application against it,
+  your project will have to be licensed in terms of the LGPL or a compatible license.
+  See the license text for details and consult with a person with expertise in licensing.
+ </dd>
+
+ <dt>Is commercial licensing available?</dt>
+ <dd>
+  No, libltc is only available in terms of the GNU Lesser General Public License:
+  <a href="http://www.gnu.org/licenses/lgpl.txt">LGPLv3</a>.<br/>
+ </dd>
+
  <dt>Is there [free] software is using libltc?</dt>
  <dd>
-  yes, <a href="https://github.com/x42/ltc-tools">ltc-tools</a>.
+  Yes, <a href="https://github.com/x42/ltc-tools">ltc-tools</a>.
   It comprises <a href="http://jackaudio.org">JACK</a> applications to generate
   and decode LTC from live sources and includes tools to read or write
   LTC from/to audio-files.
@@ -186,6 +208,7 @@
  <li><a href="http://www.barney-wol.net/time/timecode.html">Barney Wol's Timecode page</a></li>
  <li><a href="http://en.wikipedia.org/wiki/Linear_timecode">Wikipedia Info on Linear Timecode</a></li>
  <li><a href="http://en.wikipedia.org/wiki/SMPTE_timecode">Wikipedia Page on SMPTE</a></li>
+ <li><a href="https://github.com/BernsteinA/libltc-jni">Java wrapper around libltc</a></li>
 </ul>
 
 @section license License
@@ -206,7 +229,7 @@ Copyright (C) 2008-2010 by Jan Weiß
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  Lesser Public License for more details.
 
- You should have received a copy of the GNU General Public License
+ You should have received a copy of the GNU Lesser General Public License
  along with this program.  If not, see http://www.gnu.org/licenses/
 
 \example ltcdecode.c

@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -75,10 +75,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\decoder.cpp" />
-    <ClCompile Include="src\encoder.cpp" />
-    <ClCompile Include="src\ltc.cpp" />
-    <ClCompile Include="src\timecode.cpp" />
+    <ClCompile Include="src\decoder.c" />
+    <ClCompile Include="src\encoder.c" />
+    <ClCompile Include="src\ltc.c" />
+    <ClCompile Include="src\timecode.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\decoder.h" />

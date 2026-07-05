@@ -39,7 +39,7 @@ struct SMPTETimeZonesStruct {
 /**
  * SMPTE Timezone codes as per http://www.barney-wol.net/time/timecode.html
  */
-const static struct SMPTETimeZonesStruct smpte_time_zones[] =
+static const struct SMPTETimeZonesStruct smpte_time_zones[] =
 {
     /*  code,   timezone (UTC+)     //Standard time                 //Daylight saving   */
     {   0x00,   "+0000"             /* Greenwich */                 /* - */             },
@@ -216,7 +216,7 @@ void ltc_time_to_frame(LTCFrame* frame, SMPTETimecode* stime, enum LTC_TV_STANDA
 void ltc_frame_reset(LTCFrame* frame) {
 	memset(frame, 0, sizeof(LTCFrame));
 	// syncword = 0x3FFD
-#ifdef __BIG_ENDIAN__
+#ifdef LTC_BIG_ENDIAN
 	// mirrored BE bit order: FCBF
 	frame->sync_word = 0xFCBF;
 #else
@@ -431,20 +431,20 @@ int ltc_frame_decrement(LTCFrame* frame, int fps, enum LTC_TV_STANDARD standard,
 	return rv;
 }
 
-int parse_bcg_flags(LTCFrame *f, enum LTC_TV_STANDARD standard) {
+int ltc_frame_parse_bcg_flags(LTCFrame *frame, enum LTC_TV_STANDARD standard) {
 	switch (standard) {
 		case LTC_TV_625_50: /* 25 fps mode */
 			return (
-					  ((f->binary_group_flag_bit0)?4:0)
-					| ((f->binary_group_flag_bit1)?2:0)
-					| ((f->biphase_mark_phase_correction)?1:0)
+					  ((frame->binary_group_flag_bit0)?4:0)
+					| ((frame->binary_group_flag_bit1)?2:0)
+					| ((frame->biphase_mark_phase_correction)?1:0)
 					);
 			break;
 		default: /* 24,30 fps mode */
 			return (
-					  ((f->binary_group_flag_bit2)?4:0)
-					| ((f->binary_group_flag_bit1)?2:0)
-					| ((f->binary_group_flag_bit0)?1:0)
+					  ((frame->binary_group_flag_bit2)?4:0)
+					| ((frame->binary_group_flag_bit1)?2:0)
+					| ((frame->binary_group_flag_bit0)?1:0)
 					);
 			break;
 	}

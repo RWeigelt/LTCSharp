@@ -24,7 +24,7 @@ AC_CANONICAL_TARGET([])
 AC_COPYRIGHT([Copyright (C) Robin Gareus 2006-2012])
 
 AM_INIT_AUTOMAKE(libltc,$VERSION)
-AM_CONFIG_HEADER(src/config.h)
+AC_CONFIG_HEADERS([src/config.h])
 
 AC_CANONICAL_HOST
 
@@ -33,24 +33,29 @@ AC_PROG_CC
 AC_PROG_MAKE_SET
 AC_PROG_LN_S
 AC_PROG_LIBTOOL
-AM_PROG_LIBTOOL
-AM_PROG_CC_C_O
 AC_LIBTOOL_WIN32_DLL
 
 dnl *** misc complier/linker flags ***
 LIBLTC_CFLAGS="-Wall"
 LIBLTC_LDFLAGS="-export-symbols-regex '^(ltc_).*'"
 
-AC_MSG_CHECKING([if -Wl,--as-needed works])
-LDFLAGS_save=$LDFLAGS
-LDFLAGS="$LDFLAGS -Wl,--as-needed"
-AC_TRY_LINK([], [],
-            [
-             AC_MSG_RESULT([yes])
-             LIBLTC_LDFLAGS="$LIBLTC_LDFLAGS -Wl,--as-needed"
-            ], 
-            [AC_MSG_RESULT([no])])
-LDFLAGS=$LDFLAGS_save
+case $target_os in
+  *mingw32*|*win*)
+    LDFLAGS="-no-undefined"
+		;;
+  *)
+    AC_MSG_CHECKING([if -Wl,--as-needed works])
+    LDFLAGS_save=$LDFLAGS
+    LDFLAGS="$LDFLAGS -Wl,--as-needed"
+    AC_TRY_LINK([], [],
+                [
+                 AC_MSG_RESULT([yes])
+                 LIBLTC_LDFLAGS="$LIBLTC_LDFLAGS -Wl,--as-needed"
+                ],
+                [AC_MSG_RESULT([no])])
+    LDFLAGS=$LDFLAGS_save
+  ;;
+esac
 
 dnl *** check for dependencies ***
 AC_CHECK_HEADERS(stdio.h stdlib.h string.h unistd.h math.h stdint.h)
