@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Profile 1": {
-      "commandName": "Executable",
-      "debugEngines": "managed,native"
-    }
-  }
-}

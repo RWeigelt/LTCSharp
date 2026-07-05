@@ -23,4 +23,9 @@
   <ItemGroup>
     <ProjectReference Include="..\LTCSharp\LTCSharp.vcxproj" />
   </ItemGroup>
+  <Target Name="CopyLTCSharpDll" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(SolutionDir)x64\$(Configuration)\LTCSharp.dll"
+      DestinationFolder="$(OutputPath)" />
+  </Target>
 </Project>
