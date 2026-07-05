@@ -14,31 +14,31 @@ namespace VVVV.Nodes.LTC
 	public class TimecodeSplit : IPluginEvaluate
 	{
 		[Input("Input")]
-		IDiffSpread<Timecode> FInTimecode;
+		IDiffSpread<Timecode> FInTimecode = null;
 
 		[Output("Time Zone", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<string> FOutTimeZone;
+		ISpread<string> FOutTimeZone = null;
 
 		[Output("Year", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutYear;
+		ISpread<int> FOutYear = null;
 
 		[Output("Month", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutMonth;
+		ISpread<int> FOutMonth = null;
 
 		[Output("Day", Visibility = PinVisibility.OnlyInspector)]
-		ISpread<int> FOutDay;
+		ISpread<int> FOutDay = null;
 
 		[Output("Hours")]
-		ISpread<int> FOutHours;
+		ISpread<int> FOutHours = null;
 
 		[Output("Minutes")]
-		ISpread<int> FOutMinutes;
+		ISpread<int> FOutMinutes = null;
 
 		[Output("Seconds")]
-		ISpread<int> FOutSeconds;
+		ISpread<int> FOutSeconds = null;
 
 		[Output("Frame")]
-		ISpread<int> FOutFrame;
+		ISpread<int> FOutFrame = null;
 
 		public void Evaluate(int SpreadMax)
 		{

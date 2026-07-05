@@ -70,22 +70,22 @@ namespace VVVV.Nodes.LTC
 		}
 
 		[Input("Device")]
-		IDiffSpread<MMDevice> FInDevice;
+		IDiffSpread<MMDevice> FInDevice = null;
 
 		[Input("Framerate", DefaultValue=25)]
-		IDiffSpread<int> FInFramerate;
+		IDiffSpread<int> FInFramerate = null;
 
 		[Input("Channel Count", DefaultValue=2)]
-		IDiffSpread<uint> FInChannels;
+		IDiffSpread<uint> FInChannels = null;
 
 		[Input("Channel Index")]
-		IDiffSpread<uint> FInChannel;
+		IDiffSpread<uint> FInChannel = null;
 
 		[Output("Timecode")]
-		ISpread<LTCSharp.Timecode> FOutTimecode;
+		ISpread<LTCSharp.Timecode> FOutTimecode = null;
 
 		[Output("Status")]
-		ISpread<string> FOutStatus;
+		ISpread<string> FOutStatus = null;
 
 		Spread<DecodeInstance> FInstances = new Spread<DecodeInstance>(0);
 

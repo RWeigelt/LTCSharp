@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -71,9 +72,9 @@ namespace ExampleDecode
 					}
 				}
 			}
-			timer.Stop();
 		}
 
+		[SupportedOSPlatform("windows")]
 		static void FileLoadExample()
 		{
 			OpenFileDialog selectFileDialog = new OpenFileDialog();

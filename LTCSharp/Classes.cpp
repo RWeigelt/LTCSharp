@@ -6,7 +6,7 @@
 
 namespace LTCSharp
 {
-#pragma mark Timecode
+// --- Timecode ---
 	//----------
 	Timecode::Timecode() {
 		this->instance = new SMPTETimecode();
@@ -17,7 +17,7 @@ namespace LTCSharp
 		this->instance = new SMPTETimecode();
 
 		char* str2 = (char*)(void*)Marshal::StringToHGlobalAnsi(timezone);
-		sprintf(this->instance->timezone, "%s", str2);
+		sprintf_s(this->instance->timezone, sizeof(this->instance->timezone), "%s", str2);
 		Marshal::FreeHGlobal( (IntPtr) str2);
 				
 		this->instance->years = years;
@@ -35,7 +35,7 @@ namespace LTCSharp
 	Timecode::Timecode(int hours, int minutes, int seconds, int frame) {
 		this->instance = new SMPTETimecode();
 
-		strcpy(this->instance->timezone, "+0000");
+		strcpy_s(this->instance->timezone, sizeof(this->instance->timezone), "+0000");
 				
 		this->instance->years = 0;
 		this->instance->months = 0;
@@ -74,7 +74,7 @@ namespace LTCSharp
 		return this->ToString();
 	}
 
-#pragma mark Frame
+// --- Frame ---
 	//----------
 	Frame::Frame() {
 		this->instance = new LTCFrameExt();
@@ -92,7 +92,7 @@ namespace LTCSharp
 		return timecode;
 	}
 
-#pragma mark Utils
+// --- Utils ---
 	//----------
 	LTC_TV_STANDARD Utils::toNative(TVStandard standard) {
 		switch(standard) {
@@ -108,6 +108,8 @@ namespace LTCSharp
 		case TVStandard::FILM24p:
 			return LTC_TV_FILM_24;
 			break;
+		default:
+			return LTC_TV_625_50;
 		}
 	}
 
@@ -127,7 +129,7 @@ namespace LTCSharp
 		return flagsDecoded;
 	}
 
-#pragma mark Decoder
+// --- Decoder ---
 	//----------
 	Decoder::Decoder(int approxAudioSampleRate, int approxFrameRate, int queueSize) {
 		this->instance = ltc_decoder_create(approxAudioSampleRate / approxFrameRate, queueSize);
@@ -229,7 +231,7 @@ namespace LTCSharp
 		}
 	}
 
-#pragma mark Encoder
+// --- Encoder ---
 	//----------
 	Encoder::Encoder(double sampleRate, double fps, TVStandard standard, BGFlags flags) {
 		int flagsDecoded = Utils::toNative(flags);

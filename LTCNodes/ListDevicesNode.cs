@@ -14,22 +14,22 @@ namespace VVVV.Nodes.NAudio
 	public class ListDevicesNode : IPluginEvaluate
 	{
 		[Input("Refresh", IsBang = true, IsSingle = true)]
-		ISpread<bool> FInRefresh;
+		ISpread<bool> FInRefresh = null;
 
 		[Input("Type", IsSingle=true)]
-		IDiffSpread<DataFlow> FInDeviceType;
+		IDiffSpread<DataFlow> FInDeviceType = null;
 
 		[Input("State", IsSingle = true)]
-		IDiffSpread<DeviceState> FInDeviceState;
+		IDiffSpread<DeviceState> FInDeviceState = null;
 
 		[Output("Device")]
-		ISpread<MMDevice> FOutDevices;
+		ISpread<MMDevice> FOutDevices = null;
 
 		[Output("Name")]
-		ISpread<string> FOutName;
+		ISpread<string> FOutName = null;
 
 		[Output("State")]
-		ISpread<string> FOutState;
+		ISpread<string> FOutState = null;
 
 		bool firstRun = true;
 
