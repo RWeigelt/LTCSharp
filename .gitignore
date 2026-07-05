@@ -56,3 +56,4 @@ _ReSharper*/
 
 #media files
 *.avi
+**/launchSettings.json

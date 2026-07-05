@@ -6,10 +6,11 @@
 
 namespace LTCSharp
 {
-#pragma mark Timecode
+// ---- Timecode ----
 	//----------
 	Timecode::Timecode() {
 		this->instance = new SMPTETimecode();
+		memset(this->instance, 0, sizeof(SMPTETimecode));
 	}
 
 	//----------
@@ -17,7 +18,7 @@ namespace LTCSharp
 		this->instance = new SMPTETimecode();
 
 		char* str2 = (char*)(void*)Marshal::StringToHGlobalAnsi(timezone);
-		sprintf(this->instance->timezone, "%s", str2);
+		sprintf_s(this->instance->timezone, sizeof(this->instance->timezone), "%s", str2);
 		Marshal::FreeHGlobal( (IntPtr) str2);
 				
 		this->instance->years = years;
@@ -35,7 +36,7 @@ namespace LTCSharp
 	Timecode::Timecode(int hours, int minutes, int seconds, int frame) {
 		this->instance = new SMPTETimecode();
 
-		strcpy(this->instance->timezone, "+0000");
+		strcpy_s(this->instance->timezone, sizeof(this->instance->timezone), "+0000");
 				
 		this->instance->years = 0;
 		this->instance->months = 0;
@@ -74,7 +75,7 @@ namespace LTCSharp
 		return this->ToString();
 	}
 
-#pragma mark Frame
+// ---- Frame ----
 	//----------
 	Frame::Frame() {
 		this->instance = new LTCFrameExt();
@@ -88,11 +89,15 @@ namespace LTCSharp
 	//----------
 	Timecode^ Frame::getTimecode() {
 		Timecode^ timecode = gcnew Timecode();
-		ltc_frame_to_time(timecode->getInstance(), & this->getInstance()->ltc, LTC_USE_DATE);
+		// Check BGF2 (bit 2, value 4) to determine whether the source encoded date information.
+		// Per SMPTE 12M-1999 / 309M-1999: BGF2=1 signals that user bits carry date+timezone.
+		int bgf = ltc_frame_parse_bcg_flags(& this->getInstance()->ltc, this->tvStandard);
+		int flags = (bgf & 4) ? LTC_USE_DATE : 0;
+		ltc_frame_to_time(timecode->getInstance(), & this->getInstance()->ltc, flags);
 		return timecode;
 	}
 
-#pragma mark Utils
+// ---- Utils ----
 	//----------
 	LTC_TV_STANDARD Utils::toNative(TVStandard standard) {
 		switch(standard) {
@@ -108,6 +113,8 @@ namespace LTCSharp
 		case TVStandard::FILM24p:
 			return LTC_TV_FILM_24;
 			break;
+		default:
+			return LTC_TV_FILM_24;
 		}
 	}
 
@@ -127,10 +134,12 @@ namespace LTCSharp
 		return flagsDecoded;
 	}
 
-#pragma mark Decoder
+// ---- Decoder ----
 	//----------
 	Decoder::Decoder(int approxAudioSampleRate, int approxFrameRate, int queueSize) {
 		this->instance = ltc_decoder_create(approxAudioSampleRate / approxFrameRate, queueSize);
+		// Infer TV standard from frame rate: 25 fps uses 625-line/50Hz timing (different BGF bit layout)
+		this->tvStandard = (approxFrameRate == 25) ? LTC_TV_625_50 : LTC_TV_525_60;
 	}
 
 	//----------
@@ -223,13 +232,14 @@ namespace LTCSharp
 	Frame^ Decoder::Read() {
 		Frame^ frame = gcnew Frame();
 		if (ltc_decoder_read(this->instance, frame->getInstance())) {
+			frame->tvStandard = this->tvStandard;
 			return frame;
 		} else {
 			throw(gcnew System::Exception("No frames available in queue"));
 		}
 	}
 
-#pragma mark Encoder
+// ---- Encoder ----
 	//----------
 	Encoder::Encoder(double sampleRate, double fps, TVStandard standard, BGFlags flags) {
 		int flagsDecoded = Utils::toNative(flags);

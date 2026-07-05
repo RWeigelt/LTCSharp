@@ -1,92 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProjectGuid>{42E61C05-175D-4D4F-AC52-4B22795CBA6C}</ProjectGuid>
-	<OutputType>Exe</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace>ExampleDecode</RootNamespace>
-	<AssemblyName>ExampleDecode</AssemblyName>
-	<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<TargetFrameworkProfile />
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<PlatformTarget>AnyCPU</PlatformTarget>
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<PlatformTarget>AnyCPU</PlatformTarget>
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Numerics" />
-	<Reference Include="System.Windows.Forms" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="System.Data.DataSetExtensions" />
-	<Reference Include="Microsoft.CSharp" />
-	<Reference Include="System.Data" />
-	<Reference Include="System.Xml" />
+    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="NAudio.Asio" Version="2.3.0" />
+    <PackageReference Include="NAudio.Core" Version="2.3.0" />
+    <PackageReference Include="NAudio.Midi" Version="2.3.0" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.3.0" />
+    <PackageReference Include="NAudio.WinForms" Version="2.3.0" />
+    <PackageReference Include="NAudio.WinMM" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
-	<PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-	<PackageReference Include="NAudio" Version="2.3.0" />
-	<PackageReference Include="NAudio.Asio" Version="2.3.0" />
-	<PackageReference Include="NAudio.Core" Version="2.3.0" />
-	<PackageReference Include="NAudio.Midi" Version="2.3.0" />
-	<PackageReference Include="NAudio.Wasapi" Version="2.3.0" />
-	<PackageReference Include="NAudio.WinForms" Version="2.3.0" />
-	<PackageReference Include="NAudio.WinMM" Version="2.3.0" />
-	<PackageReference Include="System.Buffers" Version="4.5.1" />
-	<PackageReference Include="System.Memory" Version="4.5.5" />
-	<PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-	<PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
-	<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.3" />
-	<PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
-	<PackageReference Include="System.Security.Principal.Windows" Version="4.7.0" />
-	<PackageReference Include="VVVV.Core" Version="39.0.0" />
-	<PackageReference Include="VVVV.PluginInterfaces" Version="39.0.0" />
-	<PackageReference Include="VVVV.SlimDX" Version="1.0.2" />
-	<PackageReference Include="VVVV.System.ComponentModel.Composition.Codeplex" Version="2.5.0">
-	  <ExcludeAssets>runtime</ExcludeAssets>
-	</PackageReference>
-	<PackageReference Include="VVVV.Utils" Version="39.0.0" />
+    <ProjectReference Include="..\LTCSharp\LTCSharp.vcxproj" />
   </ItemGroup>
-  <ItemGroup>
-	<Compile Include="Program.cs" />
-	<Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-	<None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-	<ProjectReference Include="..\LTCSharp\LTCSharp.vcxproj">
-	  <Project>{6625fc6e-ac51-4276-9d95-57ab78e21b03}</Project>
-	  <Name>LTCSharp</Name>
-	</ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-	   Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+  <Target Name="CopyLTCSharpDll" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(SolutionDir)x64\$(Configuration)\LTCSharp.dll"
+      DestinationFolder="$(OutputPath)" />
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
