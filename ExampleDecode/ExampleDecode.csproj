@@ -7,8 +7,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -24,8 +28,6 @@
     <ProjectReference Include="..\LTCSharp\LTCSharp.vcxproj" />
   </ItemGroup>
   <Target Name="CopyLTCSharpDll" AfterTargets="Build">
-    <Copy
-      SourceFiles="$(SolutionDir)x64\$(Configuration)\LTCSharp.dll"
-      DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(SolutionDir)x64\$(Configuration)\LTCSharp.dll" DestinationFolder="$(OutputPath)" />
   </Target>
 </Project>
